@@ -55,12 +55,29 @@ void printTriangleStats(float opp, float hyp, float adj)
 
 int main()
 {
-    for( ; ; )
+    /*
+    for (int index = 0; index < 10; index++)
     {
-        double x,sinfunc,radian;
-        radian = PI / 180;
-        //sets variables
+         printf("For loop interation: %d\n", index);
+    }
+    */
 
+    /*
+    char testChar = -1;
+    printf("before test %c\n", testChar);
+    scanf("%c", &testChar);
+    printf("after test %c\n" , testChar);
+    */
+
+    //start of special triangle code
+    int deg;
+    double x,sinfunc,radian;
+    radian = PI / 180;
+    char userInput = 't';
+    int isRunning = 1;
+    while(isRunning)
+    {
+        //sets variables
         printf("Enter a degree: ");
         scanf("%lf",&x);
         //scans the number and applies it to x
@@ -69,36 +86,43 @@ int main()
         printf("The sine of your degree is %lf\n",sinfunc);
         //runs x through sinfunc and then prints the value out
 
-            //start of special triangle code
-            int deg;
+        printf("Enter a right triangle degree: ");
+        scanf("%d",&deg);
+        //sets value of degree, user input
 
-            printf("Enter a right triangle degree: ");
-            scanf("%d",&deg);
-            //sets value of degree, user input
-
-            switch(deg)
-            {
-                float opp,hyp,adj;
-                int Continue;
-
-                case 60:
+        float opp,hyp,adj;
+        switch(deg)
+        {
+            case 60:
                 printf("Your triangle is a 60-30!\n");
                 int specialtriangle1 = thirtysixty(&opp,&adj,&hyp);
                 printTriangleStats(opp, hyp, adj);
                 break;
 
-                case 30:
+            case 30:
                 printf("Your triangle is a 60-30!\n");
                 int specialtriangle2 = thirtysixty(&opp,&adj,&hyp);
                 printTriangleStats(opp, hyp, adj);
                 break;
 
-                case 45:
+            case 45:
                 printf("Your triangle is a 45-45!\n");
                 int specialtriangle3 = fourtyfive(&opp,&adj,&hyp);
                 printTriangleStats(opp, hyp, adj);
                 break;
-            }
+        }
+
+        printf("Continue? Y/N");
+        scanf(" %c", &userInput);
+        if(userInput == 'N')
+        {
+            printf("User Selected Quit.\n");
+            isRunning = 0;
+        }
+        else
+        {
+            printf("User wants to continue\n");
+        }
     }
 
     return(0);
