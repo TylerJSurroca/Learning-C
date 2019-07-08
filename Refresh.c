@@ -112,17 +112,29 @@ int main()
                 break;
         }
 
-        printf("Continue? Y/N");
+        printf("Continue? Y/N\n");
         scanf(" %c", &userInput);
-        if(userInput == 'N')
+        switch(userInput)
         {
-            printf("User Selected Quit.\n");
-            isRunning = 0;
+            case 'N':
+                printf("User Selected Quit.\n");
+                isRunning = 0;
+                break;
+
+            case 'n':
+                printf("User Selected Quit.\n");
+                isRunning = 0;
+                break;
+
+            case 'Y':
+                printf("User wants to continue\n");
+                break;
+
+            case 'y':
+                printf("User wants to continue\n");
+                break;
         }
-        else
-        {
-            printf("User wants to continue\n");
-        }
+
     }
 
     return(0);
