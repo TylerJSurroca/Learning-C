@@ -7,7 +7,9 @@ typedef enum
     SUB = 2,
     MULT = 3,
     DIV = 4,
-
+    EXP = 5,
+    SQRA = 6,
+    SQRB = 7
 
 } formulaTypes;
 
@@ -17,37 +19,37 @@ float formulas(float x, float y,int formulaType)
 
     switch(formulaType)
     {
-        case add:
+        case ADD:
             //Addition
             result = x + y;
             return result;
 
-        case sub:
+        case SUB:
             //Subtraction
             result = x - y;
             return result;
 
-        case 3:
+        case MULT:
             //Multiplication
             result = x * y;
             return result;
 
-        case 4:
+        case DIV:
             //Division
             result = x / y;
             return result;
 
-        case 5:
+        case EXP:
             //Exponent
             result = pow(x,y);
             return result;
 
-        case 6:
+        case SQRA:
             //Square Root
             result = sqrt(x);
             return result;
 
-        case 7:
+        case SQRB:
             result = sqrt(y);
             return result;
 
