@@ -1,57 +1,80 @@
 #include <stdio.h>
 #include <math.h>
 
-int formulas(float x, float y)
+typedef enum
 {
-    float a,b;
-    int add,sub,mul,div,exp,sqra,sqrb;
+    ADD = 1,
+    SUB = 2,
+    MULT = 3,
+    DIV = 4,
 
-    //Addition
-    add = a + b;
-    /*
-    //Subtraction
-    sub = a - b;
-    //Multiplication
-    mul = a * b;
-    //Division
-    div = a / b;
-    //Exponent
-    exp = pow(a,b);
-    //Square Root
-    sqra = sqrt(a);
-    sqrb = sqrt(b);
-    */
 
-}
+} formulaTypes;
 
-struct formulas2
+float formulas(float x, float y,int formulaType)
 {
-    float a,b;
-    int add;
+    float result;
 
-    const add = a + b;
-};
+    switch(formulaType)
+    {
+        case add:
+            //Addition
+            result = x + y;
+            return result;
 
-int printFormulas(float a, float b)
-{
+        case sub:
+            //Subtraction
+            result = x - y;
+            return result;
 
-    float add = formulas(a,b);
-    printf("%f",add);
+        case 3:
+            //Multiplication
+            result = x * y;
+            return result;
+
+        case 4:
+            //Division
+            result = x / y;
+            return result;
+
+        case 5:
+            //Exponent
+            result = pow(x,y);
+            return result;
+
+        case 6:
+            //Square Root
+            result = sqrt(x);
+            return result;
+
+        case 7:
+            result = sqrt(y);
+            return result;
+
+        default:
+            printf("Invalid Formula Type");
+            break;
+    }
 
 }
 
 int main()
 {
     float a,b;
-    int displaySolutions;
+    float displaySolutions;
+    int x = 1;
 
     printf("Enter value a: ");
-    scanf("%f",&a);
+    scanf(" %f",&a);
     printf("Enter value b: ");
-    scanf("%f",&b);
+    scanf(" %f",&b);
 
-    displaySolutions = printFormulas(a,b);
-    printf("%f",displaySolutions);
+    while(x <= 7)
+    {
+        displaySolutions = formulas(a,b,x);
+        printf("%f\n",displaySolutions);
+        x++;
+    }
 
     return(0);
 }
