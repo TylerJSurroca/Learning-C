@@ -3,9 +3,9 @@
 
 int main()
 {
-    char* check[64];
-    char fran[64] = "Francisco";
-    char tyl[64] = "Tyler";
+    char check[64];
+    char fran[32] = "Francisco\n";
+    char tyl[32] = "Tyler\n";
 
     struct person {
         int age;
@@ -24,14 +24,13 @@ int main()
     };
 
     fgets(check,64,stdin);
-    printf("%s",check);
 
-    if(strcmp(check,"Tyler"))
+    if(strcmp(check, tyl) == 0)
     {
         printf("The person you are looking for is : %s. \n",tyler.name);
         printf("They are %d years old and %f feet tall\n.",tyler.age,tyler.height);
     }
-    else if(strcmp(check,"Francisco"))
+    else if(strcmp(check, fran) == 0)
     {
         printf("The person you are looking for is : %s. \n",francisco.name);
         printf("They are %d years old and %f feet tall\n.",francisco.age,francisco.height);
