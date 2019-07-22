@@ -4,8 +4,8 @@
 int main()
 {
     char check[64];
-    char fran[32] = "Francisco\n";
-    char tyl[32] = "Tyler\n";
+    char fran[32] = "Francisco";
+    char tyl[32] = "Tyler";
 
     struct person {
         int age;
@@ -23,7 +23,7 @@ int main()
         "Francisco Surroca"
     };
 
-    fgets(check,64,stdin);
+    scanf("%s",&check);
 
     if(strcmp(check, tyl) == 0)
     {
