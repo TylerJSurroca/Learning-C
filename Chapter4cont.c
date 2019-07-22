@@ -3,7 +3,9 @@
 
 int main()
 {
-    char check[64];
+    char* check[64];
+    char fran[64] = "Francisco";
+    char tyl[64] = "Tyler";
 
     struct person {
         int age;
@@ -22,22 +24,22 @@ int main()
     };
 
     fgets(check,64,stdin);
-    printf("%s", check);
+    printf("%s",check);
 
-    if(check == 'y')
-    {
-        printf("The person you are looking for is : %s. \n",francisco.name);
-        printf("They are %d years old and %f feet tall\n.",francisco.age,francisco.height);
-    }
-    else if(check == 'a')
+    if(strcmp(check,"Tyler"))
     {
         printf("The person you are looking for is : %s. \n",tyler.name);
         printf("They are %d years old and %f feet tall\n.",tyler.age,tyler.height);
     }
+    else if(strcmp(check,"Francisco"))
+    {
+        printf("The person you are looking for is : %s. \n",francisco.name);
+        printf("They are %d years old and %f feet tall\n.",francisco.age,francisco.height);
+    }
     else
     {
         printf("The person you entered is not in our database!");
-        return check;
+        return(0);
     }
 
     return(0);
